@@ -42,7 +42,7 @@ void loop(){
   digitalWrite(LED_N_SIDE, HIGH);
   digitalWrite(LED_P_SIDE, LOW);
 */
-    if(vlhko < 40)
+    if(vlhko < 33)
     {Serial.println("Irrigation ON");
     digitalWrite(ledPin, HIGH);
       digitalWrite(ledPin2, LOW);
@@ -62,7 +62,7 @@ void loop(){
       
     }
 
-    else if(vlhko >= 40)
+    else if(vlhko >= 33)
     {
     digitalWrite(ledPin, LOW);
     digitalWrite(ledPin2, HIGH);
