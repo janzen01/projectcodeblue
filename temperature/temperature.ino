@@ -3,7 +3,7 @@ int YELLOW = A3;
 int GREEN = 13;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   pinMode(A1, INPUT);
   pinMode(RED,OUTPUT);
   pinMode(GREEN,OUTPUT);
