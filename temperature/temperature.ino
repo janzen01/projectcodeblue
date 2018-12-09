@@ -35,7 +35,8 @@ int8_t getTemperature()
 
 void loop() {
   int temp = getTemperature();
-  Serial.println(temp);
+  Serial.print(temp);
+  Serial.println("°C");
   
   
   delay(500);
