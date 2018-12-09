@@ -10,5 +10,8 @@ void setup(){
 
 loop()
 {
-    Serial.print(dht);
+    Serial.print("Vlhkost je ");
+    Serial.println(dht);
+    Serial.println("%");
+delay(10000);
 }
