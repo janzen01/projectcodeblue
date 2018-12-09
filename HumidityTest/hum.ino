@@ -7,20 +7,14 @@ dht DHT;
 
 int ledPin = 8;
 int ledPin2 = 10;
-//int motorPin = 3;
+int motorPin = 3;
 
 void setup(){
  
   Serial.begin(115200);
   pinMode(ledPin, OUTPUT);
   pinMode(ledPin2, OUTPUT);
-
-/*
-    pinMode(motorPin, OUTPUT);
-  Serial.begin(9600);
-  while (! Serial);
-  Serial.println("Speed 0 to 255");
-*/
+  pinMode(motorPin, OUTPUT);
   
 
 }//end "setup()"
@@ -47,6 +41,7 @@ void loop(){
     {Serial.println("Irrigation ON");
     digitalWrite(ledPin, HIGH);
       digitalWrite(ledPin2, LOW);
+        digitalWrite(motorPin, LOW);
 
 
 /*MOTOREK
@@ -68,6 +63,7 @@ void loop(){
     digitalWrite(ledPin, LOW);
     digitalWrite(ledPin2, HIGH);
     Serial.println("Irrigation OFF");
+    digitalWrite(motorPin, HIGH);
  
 }
     Serial.println("");
