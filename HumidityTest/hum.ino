@@ -3,6 +3,7 @@
 dht DHT;
  
 #define DHT11_PIN 7
+#define HUM_BORDER 40
 
 int ledPin = 8;
 int ledPin2 = 10;
@@ -42,7 +43,7 @@ void loop(){
   digitalWrite(LED_N_SIDE, HIGH);
   digitalWrite(LED_P_SIDE, LOW);
 */
-    if(vlhko < 33)
+    if(vlhko < HUM_BORDER)
     {Serial.println("Irrigation ON");
     digitalWrite(ledPin, HIGH);
       digitalWrite(ledPin2, LOW);
@@ -62,7 +63,7 @@ void loop(){
       
     }
 
-    else if(vlhko >= 33)
+    else if(vlhko >= HUM_BORDER)
     {
     digitalWrite(ledPin, LOW);
     digitalWrite(ledPin2, HIGH);
