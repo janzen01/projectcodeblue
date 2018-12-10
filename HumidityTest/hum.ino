@@ -4,6 +4,7 @@ dht DHT;
  
 #define DHT11_PIN 7
 #define HUM_BORDER 40
+#define ZERO 0
 
 int ledPin = 8;
 int ledPin2 = 10;
@@ -44,11 +45,12 @@ void loop(){
   digitalWrite(LED_N_SIDE, HIGH);
   digitalWrite(LED_P_SIDE, LOW);
 */
-    if(vlhko < HUM_BORDER)
+    if((vlhko < HUM_BORDER) && ((int)vlhko > ZERO))
     {Serial.println("Irrigation ON");
     digitalWrite(ledPin, HIGH);
       digitalWrite(ledPin2, LOW);
         digitalWrite(motorPin, LOW);
+
 
 
 /*MOTOREK
@@ -65,7 +67,7 @@ void loop(){
       
     }
 
-    else if(vlhko >= HUM_BORDER)
+    else if((int)vlhko >= HUM_BORDER)
     {
     digitalWrite(ledPin, LOW);
     digitalWrite(ledPin2, HIGH);
@@ -74,7 +76,7 @@ void loop(){
     }
     Serial.println("");
         
-    delay(5000);//Wait 5 seconds before accessing sensor again.
+    delay(1000);//Wait 5 seconds before accessing sensor again.
 }
   //Fastest should be once every two seconds.
 
