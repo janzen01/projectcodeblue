@@ -15,7 +15,7 @@ void setup(){
   pinMode(ledPin, OUTPUT);
   pinMode(ledPin2, OUTPUT);
   pinMode(motorPin, OUTPUT);
-  
+
 
 }//end "setup()"
  
@@ -28,6 +28,13 @@ void loop(){
     Serial.print("Humidity = ");
     Serial.print(DHT.humidity);
     Serial.println("%");
+
+    Serial.print("#S|VALUES|[");
+    Serial.print((int)DHT.humidity);
+    Serial.print(",");
+    Serial.print((int)DHT.temperature);
+    Serial.println("]#");
+
     Serial.print("Temperature = ");
     Serial.print(DHT.temperature);
     Serial.println("°C");
@@ -64,11 +71,9 @@ void loop(){
     digitalWrite(ledPin2, HIGH);
     Serial.println("Irrigation OFF");
     digitalWrite(motorPin, HIGH);
- 
-}
+    }
     Serial.println("");
-
-    
+        
     delay(5000);//Wait 5 seconds before accessing sensor again.
 }
   //Fastest should be once every two seconds.
