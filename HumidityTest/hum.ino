@@ -41,12 +41,7 @@ void loop(){
     Serial.print("Temperature = ");
     Serial.print(DHT.temperature);
     Serial.println("°C");
-/*
-  pinMode(LED_N_SIDE, OUTPUT);
-  pinMode(LED_P_SIDE, OUTPUT);
-  digitalWrite(LED_N_SIDE, HIGH);
-  digitalWrite(LED_P_SIDE, LOW);
-*/
+    
     if((vlhko < HUM_BORDER) && ((int)vlhko > ZERO) && (ifTurnsOn))
     {Serial.println("Irrigation ON");
     digitalWrite(ledPin, HIGH);
